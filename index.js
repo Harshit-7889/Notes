@@ -54,6 +54,9 @@ else{
 app.get('/profile/:username',function(req,res){
     res.send(`${req.params.username} , here`);
 })
+app.get('/hello',function(req,res){
+    res.send("Hello World");
+})
 app.listen(3000,function(){
     console.log("ITS RUNNING");
 });
