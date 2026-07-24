@@ -57,6 +57,15 @@ app.get('/profile/:username',function(req,res){
 app.get('/hello',function(req,res){
     res.send("Hello World");
 })
+
+
+
+app.get('/delete/:filename',function(req,res){
+    fs.unlink(`./files/${req.params.filename}`,function(err){
+        if(err) throw err;
+        res.redirect('/');
+    })
+})  
 app.listen(3000,function(){
     console.log("ITS RUNNING");
 });
